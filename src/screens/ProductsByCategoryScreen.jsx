@@ -1,14 +1,45 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, FlatList } from 'react-native'
+import products_data from '../data/products_data.json'
+import ProductItem from '../components/ProductItem'
+import Header from '../components/Header'
+import { useState, useEffect } from 'react'
+import Search from '../components/Search'
 
-const ProductsByCategoryScreen = () => {
+const ProductsByCategoryScreen = ({ category }) => {
+
+  const [ProductsByCategory, setProductsByCategory] = useState([])
+  const [search, setSearch] = useState('')
+
+  useEffect(()=>{
+    const productsFilterByCategory = products_data.filter(product=>product.category===category)
+    const productsFiltered = productsFilterByCategory.filter(
+      product=>product.title.toLowerCase().includes(search.toLowerCase()))
+    setProductsByCategory(productsFiltered)
+  },[category, search]) 
+
+  const renderProductItem = ({item}) => (
+    <ProductItem product={item} />
+  )
+
+  const onSearch = (search) => {
+    setSearch(search)
+  }
+
   return (
-    <View>
-      <Text>Productos por categoría</Text>
-    </View>
+    <>
+    <Header title="Productos" />
+    <Search onSearchHandlerEvent = {onSearch} />
+    <FlatList
+      data={ProductsByCategory}
+      renderItem={renderProductItem}
+      keyExtractor={item=>item.id}
+    />
+    </>
   )
 }
 
 export default ProductsByCategoryScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+})

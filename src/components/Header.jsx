@@ -20,5 +20,6 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         color: '#fff',
+        fontFamily: 'Montserrat-Bold'
     }
 })

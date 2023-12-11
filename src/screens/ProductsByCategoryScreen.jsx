@@ -5,10 +5,12 @@ import Header from '../components/Header'
 import { useState, useEffect } from 'react'
 import Search from '../components/Search'
 
-const ProductsByCategoryScreen = ({ category }) => {
+const ProductsByCategoryScreen = ({ category , onReturnHome }) => {
 
   const [ProductsByCategory, setProductsByCategory] = useState([])
   const [search, setSearch] = useState('')
+  
+  
 
   useEffect(()=>{
     const productsFilterByCategory = products_data.filter(product=>product.category===category)
@@ -25,9 +27,11 @@ const ProductsByCategoryScreen = ({ category }) => {
     setSearch(search)
   }
 
+ 
+
   return (
     <>
-    <Header title="Productos" />
+    <Header title="Productos" returnHomeHandlerEvent={onReturnHome} />
     <Search onSearchHandlerEvent = {onSearch} />
     <FlatList
       data={ProductsByCategory}

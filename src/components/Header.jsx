@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
         backgroundColor: colors.primary,
     },
     headerTitle: {
-        color: colors.text,
+        color: colors.secondary,
         fontFamily: 'Montserrat-Bold'
     },
     headerHome: {
       position: 'absolute',
       top: 1, 
       left: 150,
-      color: colors.text,
+      color: colors.secondary,
     }
 })

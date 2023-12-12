@@ -15,7 +15,7 @@ export default CategoryItem
 
 const styles = StyleSheet.create({
     cardContainer: {
-        backgroundColor: "#fff",
+        backgroundColor: colors.secondary,
         padding: 20,
         margin: 10,
     },

@@ -27,8 +27,6 @@ const ProductsByCategoryScreen = ({ category , onReturnHome }) => {
     setSearch(search)
   }
 
- 
-
   return (
     <>
     <Header title="Productos" returnHomeHandlerEvent={onReturnHome} />

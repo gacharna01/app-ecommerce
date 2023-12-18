@@ -5,11 +5,12 @@ import Header from '../components/Header'
 import { useState, useEffect } from 'react'
 import Search from '../components/Search'
 
-const ProductsByCategoryScreen = ({ category , onReturnHome }) => {
+const ProductsByCategoryScreen = ({ navigation, route }) => {
 
   const [ProductsByCategory, setProductsByCategory] = useState([])
   const [search, setSearch] = useState('')
   
+  const {category} = route.params
   
 
   useEffect(()=>{
@@ -20,7 +21,7 @@ const ProductsByCategoryScreen = ({ category , onReturnHome }) => {
   },[category, search]) 
 
   const renderProductItem = ({item}) => (
-    <ProductItem product={item} />
+    <ProductItem product={item} navigation={navigation} />
   )
 
   const onSearch = (search) => {
@@ -29,7 +30,7 @@ const ProductsByCategoryScreen = ({ category , onReturnHome }) => {
 
   return (
     <>
-    <Header title="Productos" returnHomeHandlerEvent={onReturnHome} />
+    
     <Search onSearchHandlerEvent = {onSearch} />
     <FlatList
       data={ProductsByCategory}

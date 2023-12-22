@@ -2,6 +2,7 @@ import {View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, useW
 import products_data from '../data/products_data.json'
 import { useEffect, useState } from 'react'
 import { colors } from '../global/colors'
+import Carousel from '../components/Carousel'
 
 const ProductDetailScreen = ({route}) => {
     const [productSelected, setProductSelected] = useState({})
@@ -34,11 +35,12 @@ const ProductDetailScreen = ({route}) => {
         <>
         
         <ScrollView >
-              <Image
+              {/* <Image
                 source={{ uri: productSelected.images[0] }}
                 resizeMode='cover'
                 style={isPortrait ? styles.imageProduct : styles.imageProductLandscape}
-              />
+              /> */}
+              <Carousel />
               <View style={styles.detailContainer}>
                 <Text style={styles.title}>{productSelected.title}</Text>
                 <Text style={styles.description}>{productSelected.description}</Text>

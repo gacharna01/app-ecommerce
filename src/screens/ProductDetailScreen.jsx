@@ -93,7 +93,8 @@ const styles = StyleSheet.create({
       borderRadius: 10,
     },
     buyText: {
-      color: '#000',
+      color: '#fff',
+      fontFamily: 'Montserrat-Bold',
     },
     buyAlt: {
       marginTop: 10,

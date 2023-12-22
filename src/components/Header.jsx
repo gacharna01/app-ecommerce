@@ -6,14 +6,23 @@ const Header = ({title, navigation}) => {
   
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.headerTitle}>{title}</Text>
-        <TouchableOpacity onPress={navigation.goBack}>
+      {
+         navigation.canGoBack()
+         ?
+         <>
+         <TouchableOpacity onPress={navigation.goBack}>
           <AntDesign name="caretleft" size={20} color="white" />
         </TouchableOpacity>
 
       <TouchableOpacity onPress={navigation.popToTop} >
         <AntDesign style={styles.headerHome} name="home" size={26}  />
       </TouchableOpacity>
+        </>
+        :
+        <View></View>
+      }
+      <Text style={styles.headerTitle}>{title}</Text>
+        
     </View>
   )
 }
@@ -39,7 +48,7 @@ const styles = StyleSheet.create({
     headerHome: {
       position: 'absolute',
       top: 1, 
-      left: 100,
+      left: 150,
       color: colors.secondary,
     }
 })

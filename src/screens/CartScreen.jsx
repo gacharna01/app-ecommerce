@@ -1,21 +1,19 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import CartItem from '../components/CartItem'
 import { colors } from '../global/colors'
-import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { usePostOrderMutation } from '../services/shopService';
 
 const CartScreen = ({navigation}) => {
-
-
     const cartItems = useSelector(state=>state.cartReducer.items)
     const total = useSelector(state=>state.cartReducer.total)
+    const localId = useSelector(state=>state.authReducer.localId)
     const [triggerPost, result] =  usePostOrderMutation()
 
     const confirmCart = ()=>{
-      triggerPost({total,cartItems,user:"LoggedUser" })
+      const createdAt = Date.now()
+      triggerPost({total,cartItems,localId:localId, createdAt: createdAt, orderId: Math.ceil(Math.random(1,10)*1000)})
     }
-
     const renderCartItem = ({item}) => (
         <CartItem item={item} />
     )

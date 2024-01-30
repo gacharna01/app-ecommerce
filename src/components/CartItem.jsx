@@ -2,12 +2,8 @@ import { View, Text,StyleSheet,Image, TouchableOpacity } from 'react-native'
 import Card from './Card'
 import { colors } from '../global/colors'
 import {  Feather } from '@expo/vector-icons'; 
-import { useState, useEffect } from 'react';
-
 
 const CartItem = ({item}) => {
-
-    
 
     return (
       <Card style={styles.cartItemContainer}>

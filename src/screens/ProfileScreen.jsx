@@ -8,7 +8,6 @@ import { colors } from '../global/colors'
 const ProfileScreen = ({navigation}) => {
 
     const image = useSelector(state=>state.authReducer.profilePicture)
-    //const location = useSelector(state=>state.authReducer.location)
     const location = useSelector(state=>state.authReducer.location)
 
     return (
@@ -49,14 +48,6 @@ const ProfileScreen = ({navigation}) => {
             </View>
             
         </View>
-        {/* {
-            location
-            &&
-            <View style={styles.addressContainer}>
-                    <Text style={styles.addressTitle}>Última ubicación guardada: </Text>
-                    <Text style={styles.addressDescription}>{location.address}</Text>     
-                </View>
-        } */}
         {
             location.address
             &&

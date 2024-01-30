@@ -10,8 +10,6 @@ import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
 
 
 const Tab = createBottomTabNavigator()
-
-
 const TabNavigator = ()=>{
 
     return(

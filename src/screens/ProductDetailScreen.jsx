@@ -1,20 +1,14 @@
 import {View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, useWindowDimensions, ScrollView} from 'react-native'
-import products_data from '../data/products_data.json'
 import { useEffect, useState } from 'react'
 import { colors } from '../global/colors'
 import { useSelector, useDispatch } from 'react-redux'
-import { setProductSelected } from '../features/shopSlice'
-//import Carousel from '../components/Carousel'
 import { addItem } from '../features/cartSlice'
 
 const ProductDetailScreen = ({route}) => {
     const [isLoading, setIsLoading] = useState(true)
     const [isPortrait, setIsPortrait] = useState(true)
-
     const { height, width } = useWindowDimensions()
-
     const productId = route.params
-
     const productSelected = useSelector(state=>state.shopReducer.productSelected)
 
     useEffect(() => {

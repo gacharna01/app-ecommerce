@@ -28,8 +28,7 @@ const LocationSelector = () => {
             setLocation({latitude: location.coords.latitude, longitude: location.coords.longitude})
         })()
     },[])
-    //console.log(location)
-
+    
     useEffect(() => {
         (
             async () => {

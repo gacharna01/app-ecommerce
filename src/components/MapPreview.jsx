@@ -1,4 +1,4 @@
-import { StyleSheet, Image, View, Dimensions } from 'react-native'
+import { StyleSheet, Image, View} from 'react-native'
 import React from 'react'
 import { maps_api_key } from '../apis/googleCloud'
 
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     mapImage:{
-        //width: Dimensions.get('window').width,
         width: 300,
         height: 300,
     }

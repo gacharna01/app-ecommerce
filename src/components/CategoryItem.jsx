@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import Card from './Card'
 import {colors} from '../global/colors'
 import { useDispatch } from 'react-redux'

@@ -16,7 +16,6 @@ const Header = ({title, navigation}) => {
       console.log("Sesión eliminada: ", deletedSession)
   }
 
-  
   return (
     <View style={styles.headerContainer}>
       {
@@ -26,10 +25,10 @@ const Header = ({title, navigation}) => {
          <TouchableOpacity onPress={navigation.goBack}>
           <AntDesign name="caretleft" size={20} color="white" />
         </TouchableOpacity>
-
-      <TouchableOpacity onPress={navigation.popToTop} >
-        <AntDesign style={styles.headerHome} name="home" size={26}  />
-      </TouchableOpacity>
+        
+        <TouchableOpacity onPress={navigation.popToTop} >
+          <AntDesign  name="home" size={26} color="white" />
+        </TouchableOpacity>
         </>
         :
         <View></View>

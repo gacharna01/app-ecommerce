@@ -19,15 +19,12 @@ const OrdersScreen = () => {
     }
   },[data, isLoading])
 
-
   useEffect(()=>{
     console.log(orderIdSelected)
     const orderSelected = orderData.find(order=>order.orderId===orderIdSelected)
     setOrderSelected(orderSelected)
   },[orderIdSelected])
 
-
-  
   const renderOrderItem = ({item}) => {
     return(
       <OrderItem order={item} setOrderId={setOrderIdSelected} setModalVisible={setModalVisible} />
